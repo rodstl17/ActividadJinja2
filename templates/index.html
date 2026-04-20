@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-5">Bienvenido</h1>
+    <p class="lead">Las soluciones para tu empresa</p>
+    <a href="{{ url_for('contact') }}" class="btn btn-primary">Contacta aqui</a>
+</div>
+
+<h2 class="mb-4">Nuestros servicios</h2>
+<div class="row">
+    {% for service in services %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ service.name }}</h5>
+                <p class="card-text">{{ service.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

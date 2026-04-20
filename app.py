@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 
 app = Flask(__name__)
+app.secret_key = 'super_secret_key_flask'
 
 @app.route('/')
 def index():
